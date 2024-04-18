@@ -47,6 +47,14 @@ function UserDetails() {
         isUpdateneeded: true,
       };
     } else {
+      if(nameRef.current.value == ""){
+        alert("Please Fill The Name")
+        return false;
+      }
+      else if(ageRef.current.value ==""){
+        alert("Please Fill The Age")
+        return false;
+      }
       updating = {
         name: nameRef.current.value,
         age: ageRef.current.value,
