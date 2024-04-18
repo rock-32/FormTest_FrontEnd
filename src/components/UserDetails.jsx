@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Button } from "react-bootstrap";
 import React, { useEffect, useRef, useState } from "react";
 import Table from "react-bootstrap/Table";
 
@@ -96,15 +97,15 @@ function UserDetails() {
 
               <td>
                 {!x.isUpdateneeded ? (
-                  <button onClick={() => UpdateUser(x, "edit")}>Edit</button>
+                  <Button variant="warning" onClick={() => UpdateUser(x, "edit")}>Edit</Button>
                 ) : (
-                  <button onClick={() => UpdateUser(x, "update")}>
+                  <Button variant="success" onClick={() => UpdateUser(x, "update")}>
                     Update
-                  </button>
+                  </Button>
                 )}
               </td>
               <td>
-                <button onClick={() => removeUser(x.id)}>Delete</button>
+                <Button variant="danger" onClick={() => removeUser(x.id)}>Delete</Button>
               </td>
             </tr>
           ))}
